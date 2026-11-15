@@ -1,0 +1,15 @@
+flowchart LR
+  NASA[(NASA GISTEMP v4<br/>monthly LOTI table)]
+  Fetch[Fetch over HTTPS]
+  Parse[Parse and validate<br/>year, month, units, ordering]
+  Records[Validated climate<br/>observations · 1880–2022]
+  Chart[Monthly anomaly<br/>chart and timeline]
+  Map[Deterministic<br/>anomaly → frequency mapping]
+  Audio[Web Audio API<br/>oscillator + gain envelope]
+  UX[EarthBeat user<br/>experience]
+  Spiral[NASA Climate Spiral<br/>contextual visualization]
+
+  NASA --> Fetch --> Parse --> Records
+  Records --> Chart --> UX
+  Records --> Map --> Audio --> UX
+  Spiral -. related context;<br/>not claimed frame-synchronized .-> UX

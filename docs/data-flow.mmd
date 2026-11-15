@@ -1,0 +1,10 @@
+flowchart TD
+  A[Monthly NASA observation<br/>anomaly in °C] --> B[Clamp to -1.0…+1.5 °C]
+  B --> C[Normalize within 2.5 °C domain]
+  C --> D[Linear frequency mapping]
+  D --> E[220…660 Hz]
+  E --> F[Short sine oscillator note]
+  F --> G[Gain envelope prevents clicks]
+  G --> H[Current date, anomaly,<br/>frequency and chart marker]
+
+  N[1951–1980 baseline] -. defines anomaly .-> A
